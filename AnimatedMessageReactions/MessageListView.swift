@@ -30,6 +30,25 @@ struct MessageListView: View {
                         .interpolatingSpring(stiffness: 170, damping: 15).delay(0.05),
                         value: showReactionsBackground
                     )
+                
+                HStack(spacing: 20) {
+                    Image("like")
+                        .scaleEffect(showLike ? 1 : 0)
+                    
+                    Image("thumbs_up")
+                        .scaleEffect(showThumbsUp ? 1 : 0)
+                        .rotationEffect(.degrees(thumbsUpRotation))
+                    
+                    Image("thumbs_down")
+                        .scaleEffect(showThumbsDown ? 1 : 0)
+                        .rotationEffect(.degrees(thumbsDownRotation))
+                    
+                    Image("lol")
+                        .scaleEffect(showLol ? 1 : 0)
+                    
+                    Image("wut_reaction")
+                        .scaleEffect(showWutReaction ? 1 : 0)
+                }
             }
             
             MessageView(person: "lando", text: "Have you checked out the Stream iOS and SwiftUI SDK's? I hear they are incredible!")
