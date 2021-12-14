@@ -25,6 +25,9 @@ struct MessageListView: View {
             }
             
             MessageView(person: "lando", text: "Have you checked out the Stream iOS and SwiftUI SDK's? I hear they are incredible!")
+                .onLongPressGesture {
+                    showReactionsBackground.toggle()
+                }
         }
         .padding()
         .navigationTitle("Stream Chat Crew")
