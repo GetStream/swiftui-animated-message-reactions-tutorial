@@ -19,6 +19,14 @@ struct MessageListView: View {
     @State private var showLol = false
     @State private var showWutReaction = false
     
+    var isThumbsUpRotated: Bool {
+      thumbsUpRotation == -45
+    }
+
+    var isThumbsDownRotated: Bool {
+      thumbsDownRotation == -45
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             ZStack {
@@ -60,11 +68,13 @@ struct MessageListView: View {
                     }
                     
                     withAnimation(.interpolatingSpring(stiffness: 170, damping: 15).delay(0.2)) {
-                        showThumbsUp.toggle()
+                      showThumbsUp.toggle()
+                      thumbsUpRotation = isThumbsUpRotated ? 0 : -45
                     }
-                    
+
                     withAnimation(.interpolatingSpring(stiffness: 170, damping: 15).delay(0.3)) {
-                        showThumbsDown.toggle()
+                      showThumbsDown.toggle()
+                      thumbsDownRotation = isThumbsDownRotated ? 0 : -45
                     }
                     
                     withAnimation(.interpolatingSpring(stiffness: 170, damping: 15).delay(0.4)) {
