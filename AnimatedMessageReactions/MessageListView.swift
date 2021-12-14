@@ -11,6 +11,14 @@ struct MessageListView: View {
     
     @State private var showReactionsBackground = false
     
+    @State private var showLike = false
+    @State private var showThumbsUp = false
+    @State private var thumbsUpRotation: Double = -45 // 🤔
+    @State private var showThumbsDown = false
+    @State private var thumbsDownRotation: Double = -45 // 🤔
+    @State private var showLol = false
+    @State private var showWutReaction = false
+    
     var body: some View {
         VStack(alignment: .leading) {
             ZStack {
