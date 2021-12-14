@@ -54,6 +54,26 @@ struct MessageListView: View {
             MessageView(person: "lando", text: "Have you checked out the Stream iOS and SwiftUI SDK's? I hear they are incredible!")
                 .onLongPressGesture {
                     showReactionsBackground.toggle()
+                    
+                    withAnimation(.interpolatingSpring(stiffness: 170, damping: 15).delay(0.1)) {
+                        showLike.toggle()
+                    }
+                    
+                    withAnimation(.interpolatingSpring(stiffness: 170, damping: 15).delay(0.2)) {
+                        showThumbsUp.toggle()
+                    }
+                    
+                    withAnimation(.interpolatingSpring(stiffness: 170, damping: 15).delay(0.3)) {
+                        showThumbsDown.toggle()
+                    }
+                    
+                    withAnimation(.interpolatingSpring(stiffness: 170, damping: 15).delay(0.4)) {
+                        showLol.toggle()
+                    }
+                    
+                    withAnimation(.interpolatingSpring(stiffness: 170, damping: 15).delay(0.5)) {
+                        showWutReaction.toggle()
+                    }
                 }
         }
         .padding()
